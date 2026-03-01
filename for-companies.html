@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StackBoost for Companies — Find genuine advocates for your product</title>
+  <meta name="description" content="Connect with real customers who already love your product and want to post about it on LinkedIn. First introduction free.">
+  <meta property="og:title" content="StackBoost for Companies — Authentic LinkedIn advocacy at $25/introduction">
+  <meta property="og:description" content="We find people who genuinely use and love your product, then connect you. First intro free.">
+  <meta property="og:type" content="website">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d0f17;
+      --bg-card: #131722;
+      --border: #1e2535;
+      --text: #e2e8f0;
+      --text-muted: #64748b;
+      --accent: #22d3ee;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 2rem;
+      border-bottom: 1px solid var(--border);
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .logo { font-weight: 800; font-size: 1.1rem; color: #fff; letter-spacing: -0.02em; }
+    .logo span { color: var(--accent); }
+    .nav-link { font-size: 0.875rem; color: var(--text-muted); }
+    .nav-link:hover { color: var(--text); text-decoration: none; }
+
+    .hero { padding: 5rem 2rem 3.5rem; max-width: 720px; margin: 0 auto; }
+
+    .eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: #fff;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 560px;
+      margin-bottom: 2.5rem;
+      line-height: 1.75;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #000;
+      font-weight: 700;
+      padding: 0.85rem 1.75rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      transition: background 0.15s;
+    }
+
+    .btn:hover { background: #67e8f9; text-decoration: none; }
+
+    .btn-ghost {
+      display: inline-block;
+      background: transparent;
+      color: var(--text-muted);
+      font-weight: 600;
+      padding: 0.85rem 1.75rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      border: 1px solid var(--border);
+      margin-left: 0.75rem;
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    .btn-ghost:hover { border-color: var(--text-muted); color: var(--text); text-decoration: none; }
+
+    .cta-group { display: flex; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+
+    .stats {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 3rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+
+    .stat .val { font-size: 1.4rem; font-weight: 700; color: #fff; }
+    .stat .lbl { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.1rem; }
+
+    .section {
+      padding: 4rem 2rem;
+      max-width: 720px;
+      margin: 0 auto;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-weight: 700;
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .steps { display: grid; gap: 2rem; }
+    .step { display: flex; gap: 1.25rem; }
+
+    .step-num {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--accent);
+      min-width: 2rem;
+      padding-top: 0.25rem;
+      letter-spacing: 0.05em;
+    }
+
+    .step h3 { font-size: 1rem; font-weight: 600; color: #fff; margin-bottom: 0.35rem; }
+    .step p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.65; }
+
+    .vs-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+      margin-top: 1.5rem;
+    }
+
+    .vs-table th {
+      text-align: left;
+      padding: 0.75rem 1rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .vs-table td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-muted);
+      vertical-align: top;
+    }
+
+    .vs-table td:first-child { color: var(--text); font-weight: 500; }
+    .vs-table tr:last-child td { border-bottom: none; }
+    .check { color: var(--accent); font-weight: 700; }
+    .cross { color: #ef4444; }
+
+    .pricing-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-top: 1.5rem;
+    }
+
+    .price-tag {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.04em;
+    }
+
+    .price-tag span { font-size: 1rem; font-weight: 500; color: var(--text-muted); }
+
+    .pricing-card p { font-size: 0.875rem; color: var(--text-muted); margin-top: 0.75rem; line-height: 1.7; }
+
+    .pricing-features { list-style: none; margin-top: 1.5rem; display: grid; gap: 0.6rem; }
+    .pricing-features li { font-size: 0.875rem; color: var(--text-muted); display: flex; gap: 0.5rem; }
+    .pricing-features .check { flex-shrink: 0; }
+
+    .faq-item { margin-bottom: 1.75rem; }
+    .faq-item h3 { font-size: 0.95rem; font-weight: 600; color: #fff; margin-bottom: 0.35rem; }
+    .faq-item p { font-size: 0.875rem; color: var(--text-muted); line-height: 1.7; }
+
+    .cta-section {
+      padding: 4rem 2rem;
+      max-width: 720px;
+      margin: 0 auto;
+      border-top: 1px solid var(--border);
+    }
+
+    .cta-section p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem; max-width: 480px; }
+
+    footer {
+      padding: 2rem;
+      max-width: 720px;
+      margin: 2rem auto 0;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    footer p { font-size: 0.78rem; color: var(--text-muted); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo">Stack<span>Boost</span></a>
+  <a href="/" class="nav-link">For advocates →</a>
+</nav>
+
+<div class="hero">
+  <div class="eyebrow">For Companies · B2B SaaS</div>
+  <h1>Your real users want<br>to post about you.</h1>
+  <p class="hero-sub">
+    We find people who already use and genuinely like your product — then connect you.
+    Authentic LinkedIn posts from real customers in your target market. No agencies, no bots.
+  </p>
+  <div class="cta-group">
+    <a href="mailto:alex.ingram@opportune.to?subject=StackBoost%20Company%20Inquiry&body=Hi%20Alex%2C%0A%0AWe're%20interested%20in%20connecting%20with%20advocates%20for%20[Company%20Name].%0A%0AOur%20product%3A%0ATarget%20audience%3A%0A%0ALet's%20talk." class="btn">Get your first intro free →</a>
+    <a href="mailto:alex.ingram@opportune.to?subject=StackBoost%20Question" class="btn-ghost">Ask a question</a>
+  </div>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="val">$25</div>
+      <div class="lbl">Per introduction (first free)</div>
+    </div>
+    <div class="stat">
+      <div class="val">100% authentic</div>
+      <div class="lbl">Real users, not hired influencers</div>
+    </div>
+    <div class="stat">
+      <div class="val">No subscription</div>
+      <div class="lbl">Pay per connection only</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-label">How it works</div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div>
+        <h3>Tell us your product</h3>
+        <p>Email us or fill out a quick form. We need to know which product you want advocates for and what your ideal advocate looks like — seniority, industry, company size.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div>
+        <h3>We find your genuine fans</h3>
+        <p>We search our advocate database for people who listed your product as a tool they love. We vet each match: real LinkedIn profile, relevant job title, genuine usage. If we don't have a match yet, we find one.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div>
+        <h3>You get the introduction</h3>
+        <p>We send you the advocate's name, LinkedIn, job title, and why they love your product. First intro is free. You take it from there — reach out directly, decide on compensation together. How it's structured is between you.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <div>
+        <h3>Authentic content, your market</h3>
+        <p>When the advocate posts, it reaches their professional network — often peers in your exact target market. One genuine post from a real power user can drive meaningful pipeline. We charge $25 for subsequent intros. Money back if the advocate doesn't respond within 30 days.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-label">Why not just use advocacy platforms?</div>
+  <table class="vs-table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>StackBoost</th>
+        <th>Influitive / Advocacy Software</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Monthly cost</td>
+        <td class="check">$0–$200</td>
+        <td class="cross">$1,999–$4,000+</td>
+      </tr>
+      <tr>
+        <td>Advocate authenticity</td>
+        <td class="check">Genuine fans only — listed your tool themselves</td>
+        <td class="cross">Anyone in your CRM who opts in</td>
+      </tr>
+      <tr>
+        <td>Setup time</td>
+        <td class="check">One email to get started</td>
+        <td class="cross">Months of implementation</td>
+      </tr>
+      <tr>
+        <td>Content type</td>
+        <td class="check">LinkedIn posts from real users</td>
+        <td class="cross">Reviews, gamification tasks, referrals</td>
+      </tr>
+      <tr>
+        <td>No subscription required</td>
+        <td class="check">Pay per connection only</td>
+        <td class="cross">Annual contract required</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <div class="section-label">Pricing</div>
+  <div class="pricing-card">
+    <div class="price-tag">$25 <span>/ introduction</span></div>
+    <p>One flat fee per advocate introduction. No subscription, no platform fee, no retainer. First intro is always free so you can validate quality before committing.</p>
+    <ul class="pricing-features">
+      <li><span class="check">✓</span> First introduction free — no obligation</li>
+      <li><span class="check">✓</span> 30-day money-back guarantee if advocate is unresponsive</li>
+      <li><span class="check">✓</span> Full LinkedIn profile + why they love your product</li>
+      <li><span class="check">✓</span> No minimum volume — 1 intro or 100</li>
+      <li><span class="check">✓</span> You control compensation — gift card, discount, cash — up to you</li>
+    </ul>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-label">Common questions</div>
+  <div class="faq-item">
+    <h3>Do you guarantee a LinkedIn post?</h3>
+    <p>No. We connect you with genuine advocates — people who actually use and like your product. Whether they post, and how, is between you and them. What we guarantee is the introduction to a real, vetted advocate (or money back in 30 days).</p>
+  </div>
+  <div class="faq-item">
+    <h3>What if our product isn't in your database yet?</h3>
+    <p>We'll source advocates. Send us your product URL and target audience profile. We'll find 2-3 genuine fans (real users on LinkedIn) and bring the best match to you. Still $25 — same guarantee.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Do advocates know they're being introduced to a company?</h3>
+    <p>Yes. Every advocate on StackBoost signed up knowing they might be connected with companies. They opted in to be matched. No surprise cold pitches.</p>
+  </div>
+  <div class="faq-item">
+    <h3>How is compensation structured?</h3>
+    <p>That's between you and the advocate. Common arrangements: gift cards, product credits, cash payment, or just appreciation. Our platform introduction doesn't require or mandate any particular arrangement.</p>
+  </div>
+  <div class="faq-item">
+    <h3>What verticals do you focus on?</h3>
+    <p>B2B SaaS, with depth in MarTech, Sales tools, CRM, and CS platforms. If your product is in a different B2B vertical, reach out — we expand based on demand.</p>
+  </div>
+</div>
+
+<div class="cta-section">
+  <div class="section-label">Get started</div>
+  <h2>Get your first advocate intro free.</h2>
+  <p>Email us your product name and what a good advocate looks like. We'll come back with a match within a week — no obligation until you decide it's a fit.</p>
+  <a href="mailto:alex.ingram@opportune.to?subject=StackBoost%20Company%20Inquiry&body=Hi%20Alex%2C%0A%0AWe're%20interested%20in%20connecting%20with%20advocates%20for%20[Company%20Name].%0A%0AOur%20product%3A%0ATarget%20advocate%20profile%20(industry%2C%20seniority%2C%20company%20size)%3A%0A%0A" class="btn">Get first intro free →</a>
+</div>
+
+<footer>
+  <p>© 2026 StackBoost · <a href="mailto:alex.ingram@opportune.to">alex.ingram@opportune.to</a></p>
+  <p>A project by <a href="https://opportune.to">Opportune</a></p>
+</footer>
+
+</body>
+</html>
