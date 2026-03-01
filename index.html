@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StackBoost — Get paid for posts you'd write anyway</title>
+  <meta name="description" content="Get matched with the companies behind the B2B tools you love. Share your honest take on LinkedIn, get rewarded.">
+  <meta property="og:title" content="StackBoost — Get paid for posts you'd write anyway">
+  <meta property="og:description" content="Connect with companies whose tools you already use and recommend. Write honestly, get rewarded.">
+  <meta property="og:type" content="website">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d0f17;
+      --bg-card: #131722;
+      --border: #1e2535;
+      --text: #e2e8f0;
+      --text-muted: #64748b;
+      --accent: #22d3ee;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 2rem;
+      border-bottom: 1px solid var(--border);
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .logo { font-weight: 800; font-size: 1.1rem; color: #fff; letter-spacing: -0.02em; }
+    .logo span { color: var(--accent); }
+    .nav-link { font-size: 0.875rem; color: var(--text-muted); }
+    .nav-link:hover { color: var(--text); text-decoration: none; }
+
+    .hero { padding: 5rem 2rem 3.5rem; max-width: 720px; margin: 0 auto; }
+
+    .eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 5.5vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: #fff;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 540px;
+      margin-bottom: 2.5rem;
+      line-height: 1.75;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #000;
+      font-weight: 700;
+      padding: 0.85rem 1.75rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      transition: background 0.15s;
+    }
+
+    .btn:hover { background: #67e8f9; text-decoration: none; }
+
+    .stats {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 3rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+
+    .stat .val { font-size: 1.4rem; font-weight: 700; color: #fff; }
+    .stat .lbl { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.1rem; }
+
+    .section {
+      padding: 4rem 2rem;
+      max-width: 720px;
+      margin: 0 auto;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-weight: 700;
+      margin-bottom: 2.5rem;
+    }
+
+    .steps { display: grid; gap: 2rem; }
+    .step { display: flex; gap: 1.25rem; }
+
+    .step-num {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--accent);
+      min-width: 2rem;
+      padding-top: 0.25rem;
+      letter-spacing: 0.05em;
+    }
+
+    .step h3 { font-size: 1rem; font-weight: 600; color: #fff; margin-bottom: 0.35rem; }
+    .step p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.65; }
+
+    .faq-item { margin-bottom: 1.75rem; }
+    .faq-item h3 { font-size: 0.95rem; font-weight: 600; color: #fff; margin-bottom: 0.35rem; }
+    .faq-item p { font-size: 0.875rem; color: var(--text-muted); line-height: 1.7; }
+
+    .signup-section {
+      padding: 4rem 2rem 2rem;
+      max-width: 720px;
+      margin: 0 auto;
+      border-top: 1px solid var(--border);
+    }
+
+    .signup-section h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .signup-sub { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 2rem; }
+
+    .form-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+    }
+
+    .form-card > p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+
+    .fields {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      font-family: ui-monospace, 'SF Mono', monospace;
+      line-height: 1.8;
+    }
+
+    footer {
+      padding: 2rem;
+      max-width: 720px;
+      margin: 2rem auto 0;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    footer p { font-size: 0.78rem; color: var(--text-muted); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Stack<span>Boost</span></div>
+  <a href="mailto:alex.ingram@opportune.to?subject=StackBoost%20for%20Companies" class="nav-link">For companies →</a>
+</nav>
+
+<div class="hero">
+  <div class="eyebrow">Early Access · B2B Edition</div>
+  <h1>Get paid for posts<br>you'd write anyway.</h1>
+  <p class="hero-sub">
+    We connect genuine product fans with the companies whose tools they love.
+    Share your honest take on a tool you already use daily —
+    and get rewarded for the word of mouth you're already creating.
+  </p>
+  <a href="#signup" class="btn">Join as an advocate →</a>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="val">$50–200</div>
+      <div class="lbl">Typical reward per post</div>
+    </div>
+    <div class="stat">
+      <div class="val">~30 min</div>
+      <div class="lbl">Time to write a post</div>
+    </div>
+    <div class="stat">
+      <div class="val">No followers required</div>
+      <div class="lbl">Any LinkedIn profile welcome</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-label">How it works</div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div>
+        <h3>List 3 tools you genuinely love</h3>
+        <p>Sign up and tell us which products are in your stack — HubSpot, Salesforce, Gong, Klaviyo, or whatever you'd recommend unprompted. Authenticity is the whole point. No minimum follower count required.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div>
+        <h3>We find you a match</h3>
+        <p>When a company on our platform wants to connect with genuine advocates, we reach out to you directly. No spammy campaigns — one message when there's a real opportunity that fits your stack.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div>
+        <h3>Post honestly, get rewarded</h3>
+        <p>Write your post in your own voice — honestly. Once you're connected, you and the company work out the details together. Post when it feels right, get your reward within 48 hours.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-label">Common questions</div>
+  <div class="faq-item">
+    <h3>Do I have to write something positive?</h3>
+    <p>Write what's true. Companies want authentic posts from real users, not fake hype. If you genuinely love a tool, say what you love about it and why. Authentic posts perform better anyway.</p>
+  </div>
+  <div class="faq-item">
+    <h3>What if I don't like the company's offer?</h3>
+    <p>You're never obligated to post. We'll reach out when there's an opportunity — you decide whether to accept. No commitment on signup, no pressure.</p>
+  </div>
+  <div class="faq-item">
+    <h3>How is this different from influencer deals?</h3>
+    <p>Influencers are hired to promote products they may never use. StackBoost only matches companies with people who already use and like their product. Audiences can tell the difference.</p>
+  </div>
+  <div class="faq-item">
+    <h3>What's the catch?</h3>
+    <p>None for advocates. We charge companies to connect with you, not the other way around. Early advocates get priority placement when companies start looking.</p>
+  </div>
+</div>
+
+<div class="signup-section" id="signup">
+  <h2>Join the advocate waitlist</h2>
+  <p class="signup-sub">Takes 2 minutes. No commitment. First matches going out this month.</p>
+
+  <div class="form-card">
+    <p>
+      Send a quick email to <strong>alex.ingram@opportune.to</strong> with the following info —
+      we'll confirm your spot within 24 hours:
+    </p>
+    <div class="fields">
+      Subject: StackBoost Advocate Signup<br><br>
+      Name:<br>
+      LinkedIn URL:<br>
+      Job title:<br><br>
+      Tools I love (list 3+):<br>
+      1.<br>
+      2.<br>
+      3.
+    </div>
+    <a class="btn" href="mailto:alex.ingram@opportune.to?subject=StackBoost%20Advocate%20Signup&body=Name%3A%20%0ALinkedIn%20URL%3A%20%0AJob%20title%3A%20%0A%0ATools%20I%20love%20(list%203%2B)%3A%0A1.%20%0A2.%20%0A3.%20">
+      Send my signup →
+    </a>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 StackBoost · <a href="mailto:alex.ingram@opportune.to">alex.ingram@opportune.to</a></p>
+  <p>A project by <a href="https://opportune.to">Opportune</a></p>
+</footer>
+
+</body>
+</html>
